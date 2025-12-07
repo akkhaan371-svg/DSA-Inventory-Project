@@ -1,7 +1,14 @@
+// ------------------------------------------------------------
+// DSA Project: Game Inventory Manager
+// Implemented using Singly Linked List
+// Author: Your Name
+// ------------------------------------------------------------
+
 #include <iostream>
 #include <string>
 using namespace std;
 
+// Node class to store each item
 class Item
 {
 public:
@@ -10,8 +17,9 @@ public:
     int quantity;
     Item* next;
 
-    Item(int id, string name, int quantity) 
-	{
+    // Constructor
+    Item(int id, string name, int quantity)
+    {
         this->id = id;
         this->name = name;
         this->quantity = quantity;
@@ -19,27 +27,31 @@ public:
     }
 };
 
-class Inventory 
+// Inventory class managing the linked list
+class Inventory
 {
 private:
     Item* head;
 
 public:
-    Inventory() 
-	{
+    Inventory()
+    {
         head = NULL;
     }
 
-    void addItem(int id, string name, int quantity) 
-	{
+    // ------------------------------------------------------------
+    // Function to add a new item at the end of the linked list
+    // ------------------------------------------------------------
+    void addItem(int id, string name, int quantity)
+    {
         Item* newItem = new Item(id, name, quantity);
 
-        if (head == NULL) 
-		{
+        if (head == NULL)
+        {
             head = newItem;
         }
-        else 
-		{
+        else
+        {
             Item* temp = head;
             while (temp->next != NULL)
                 temp = temp->next;
@@ -50,10 +62,13 @@ public:
         cout << "Item added successfully!\n";
     }
 
-    void removeItem(int id) 
-	{
-        if (head == NULL) 
-		{
+    // ------------------------------------------------------------
+    // Function to remove an item by its ID
+    // ------------------------------------------------------------
+    void removeItem(int id)
+    {
+        if (head == NULL)
+        {
             cout << "Inventory is empty!\n";
             return;
         }
@@ -61,22 +76,22 @@ public:
         Item* temp = head;
         Item* prev = NULL;
 
-        if (temp != NULL && temp->id == id) 
-		{
+        if (temp != NULL && temp->id == id)
+        {
             head = temp->next;
             delete temp;
             cout << "Item removed successfully!\n";
             return;
         }
 
-        while (temp != NULL && temp->id != id) 
-		{
+        while (temp != NULL && temp->id != id)
+        {
             prev = temp;
             temp = temp->next;
         }
 
-        if (temp == NULL) 
-		{
+        if (temp == NULL)
+        {
             cout << "Item not found!\n";
             return;
         }
@@ -86,14 +101,17 @@ public:
         cout << "Item removed successfully!\n";
     }
 
-    void searchItem(int id) 
-	{
+    // ------------------------------------------------------------
+    // Function to search for an item by its ID
+    // ------------------------------------------------------------
+    void searchItem(int id)
+    {
         Item* temp = head;
 
-        while (temp != NULL) 
-		{
-            if (temp->id == id) 
-			{
+        while (temp != NULL)
+        {
+            if (temp->id == id)
+            {
                 cout << "\nItem Found:\n";
                 cout << "ID: " << temp->id << endl;
                 cout << "Name: " << temp->name << endl;
@@ -106,10 +124,13 @@ public:
         cout << "Item not found!\n";
     }
 
-    void displayInventory() 
-	{
-        if (head == NULL) 
-		{
+    // ------------------------------------------------------------
+    // Function to display all items in the inventory
+    // ------------------------------------------------------------
+    void displayInventory()
+    {
+        if (head == NULL)
+        {
             cout << "Inventory is empty!\n";
             return;
         }
@@ -117,8 +138,8 @@ public:
         Item* temp = head;
         cout << "\n--- Game Inventory Items ---\n";
 
-        while (temp != NULL) 
-		{
+        while (temp != NULL)
+        {
             cout << "ID: " << temp->id
                  << " | Name: " << temp->name
                  << " | Quantity: " << temp->quantity << endl;
@@ -127,14 +148,17 @@ public:
     }
 };
 
-int main() 
+// ------------------------------------------------------------
+// Main menu for the program
+// ------------------------------------------------------------
+int main()
 {
     Inventory inv;
     int choice, id, quantity;
     string name;
 
-    do 
-	{
+    do
+    {
         cout << "\n===== GAME INVENTORY MANAGER =====\n";
         cout << "1. Add Item\n";
         cout << "2. Remove Item\n";
@@ -144,9 +168,8 @@ int main()
         cout << "Enter choice: ";
         cin >> choice;
 
-        switch (choice) 
-		{
-
+        switch (choice)
+        {
         case 1:
             cout << "Enter Item ID: ";
             cin >> id;
@@ -185,8 +208,8 @@ int main()
             cout << "Invalid choice! Try again.\n";
         }
 
-    } 
-	while (choice != 5);
+    } while (choice != 5);
 
     return 0;
 }
+
