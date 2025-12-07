@@ -1,5 +1,4 @@
 
-
 ```markdown
 # Game Inventory Manager – DSA Project
 
@@ -58,7 +57,7 @@ Follow the on-screen menu to add, remove, search, or display items.
 
 ## 🧠 Data Structure & Implementation
 
-* **Singly Linked List** is used to store inventory items dynamically.
+* Uses a **Singly Linked List** to store inventory items dynamically.
 * Each node contains:
 
   * `id` (integer)
@@ -98,8 +97,8 @@ ID: 101 | Name: Potion | Quantity: 5
 
 ## ⚠️ Known Limitations / Notes
 
-* Currently, duplicate IDs are not prevented.
-* Items are not stored permanently; all data is lost when the program exits.
+* Duplicate IDs are not prevented.
+* Items are lost when the program exits (no file storage).
 * Simple console interface (no GUI).
 
 ---
@@ -118,17 +117,12 @@ It strengthens understanding of:
 
 ---
 
-Copy everything above and **replace your current README.md** content with it.  
-Then commit with a message like:
+### ✅ Next Steps:
+
+1. Open your `README.md` in GitHub.  
+2. Replace the old content with this final version.  
+3. Commit the changes with a message like:
 
 ```
-
-Updated README.md with full project details and instructions
-
-```
-
-After that, your repo will be **fully submission-ready**.
-```
-
 
 
