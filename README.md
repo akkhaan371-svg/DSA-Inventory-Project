@@ -1,8 +1,10 @@
-
-```markdown
 # Game Inventory Manager – DSA Project
 
-**Author:** Your Name  
+**Authors / Group Members:**  
+- Muhammad Haris Habib (62670)  
+- Hazrat Ali Khan (63046)  
+- Habibullah Naz (63290)  
+
 **Course / Semester:** Data Structures & Algorithms (DSA)  
 
 ---
